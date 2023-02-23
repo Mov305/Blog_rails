@@ -121,7 +121,7 @@ Microverse.
 
 ## 📝 License <a name="license" href="https://github.com/Mov305/To-do-list/blob/master/MIT.md" ></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is <a href="https://github.com/Mov305/To-do-list/blob/master/MIT.md" target="_blank">MIT</a> licensed. 
 
 [back to top](#readme-top)
 
