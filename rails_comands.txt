@@ -1,0 +1,10 @@
+rails commands
+
+To generate a model of the comment which belongs to a post and a user, we can use the following command:
+rails g model Comment body:text post:references user:references 
+
+To generate a model of the post which belongs to a user, has many likes, and has many comments, we can use the following command:
+rails g model Post user:references likes:has_many comments:has_many
+
+To rollback the last model generation, we can use the following command:
+rails db:rollback STEP=1

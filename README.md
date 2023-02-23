@@ -81,7 +81,7 @@ Run the program
 rails s
 ```
 
-<p align="right">([back to top](#readme-top))</p>
+[back to top](#readme-top)
 
 
 ## 👥 Authors <a name="authors"></a>
@@ -98,7 +98,7 @@ rails s
 
 - [ ] **More methods**
 
-<p align="right">([back to top](#readme-top))</p>
+[back to top](#readme-top)
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -106,23 +106,22 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/paulinagonzalezc/blog-app-rails/issues).
 
-<p align="right">([back to top](#readme-top))</p>
+[back to top](#readme-top)
 
 ## ⭐️ Show your support <a name="support"></a>
 
 If you like this project please give it a star 😁🌟✨
 
-<p align="right">([back to top](#readme-top))</p>
+[back to top](#readme-top)
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 Microverse.
+[back to top](#readme-top)
 
-<p align="right">([back to top](#readme-top))</p>
+## 📝 License <a name="license" href="https://github.com/Mov305/To-do-list/blob/master/MIT.md" ></a>
 
-## 📝 License <a name="license"></a>
+This project is <a href="https://github.com/Mov305/To-do-list/blob/master/MIT.md" target="_blank">MIT</a> licensed. 
 
-This project is [MIT](./LICENSE) licensed.
-
-<p align="right">([back to top](#readme-top))</p>
+[back to top](#readme-top)
 
