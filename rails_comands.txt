@@ -8,3 +8,6 @@ rails g model Post user:references likes:has_many comments:has_many
 
 To rollback the last model generation, we can use the following command:
 rails db:rollback STEP=1
+
+to Delete a user by querying the database, we can use the following command:
+User.find_by(name: "John").destroy
