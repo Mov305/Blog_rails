@@ -1,3 +1,4 @@
-<h1>users</h1>
-<p>path: app/views/users/index.html.erb </p>
-<h2>Here is the list of users</h2>
+<h1 class="text-center m-5 font-bold text-2xl " >Users</h1>
+<section class="p-5">
+  <% @users.each do |user| %> <%= render 'shared/user_card', user: user %> <% end %>
+</section>

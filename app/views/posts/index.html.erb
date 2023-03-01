@@ -1,3 +1,9 @@
-<h1>List of user's Posts</h1>
-<p>path: app/views/posts/index.html.erb</p>
-<h2>Here is the list of posts for a single user</h2>
+<section class="p-5">
+  <div><%= render 'shared/profile_card', user: @user %></div>
+  <div class="flex flex-col items-center">
+    <h1 class="text-center m-5 font-semibold text-xl">Recent Posts</h1>
+    <div class="flex flex-col">
+      <% @posts.each do |post| %> <%= render 'shared/post_all', post: post, user:@user %> <% end %>
+    </div>
+  </div>
+</section>

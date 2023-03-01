@@ -1,3 +1,18 @@
-<h1>Post #</h1>
-<p>path: app/views/posts/show.html.erb </p>
-<p>Here is the post</p>
+<section class="p-5">
+  <div class="flex flex-col items-center">
+    <h1><%= @post.title %></h1>
+    <div class="flex justify-end gap-4 text-sm w-full">
+      <span> <%= @post.comments_counter %> comments </span>
+      <span> <%= @post.likes_counter %> likes </span>
+    </div>
+  </div>
+  <p class="bg-gray-200/30 p-3 border-b border-gray-500/50"><%= @post.text %></p>
+  <div class="flex flex-col gap-2 p-5 bg-gray-200/30 rounded-br-3xl">
+    <% @comments.each do |comment| %>
+    <div>
+      <span class="text-sm font-semibold text-gray-500"><%= comment.username %>:</span>
+      <span class="text-sm text-gray-500"><%= comment.text %></span>
+    </div>
+    <% end %>
+  </div>
+</section>
