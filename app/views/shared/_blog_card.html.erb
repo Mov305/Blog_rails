@@ -1,0 +1,65 @@
+<article class="flex bg-white transition hover:shadow-xl border-[1px] border-gray-100 rounded-tl-3xl mt-6 cursor-pointer" onclick="location.href='<%= user_post_path(user,post) %>'" >
+    <div class="flex items-center">
+        <time
+        datetime="<%= post.created_at.strftime("%Y-%m-%d") %> "
+        class="flex flex-col-reverse items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900 h-full py-6"
+      >
+        <span class="-rotate-90" ><%= post.created_at.strftime("%Y") %>
+        </span class="-rotate-90">
+        <span class="w-1 flex-1 bg-gray-900/25 rounded-xl"></span>
+        <span class="-rotate-90">
+            <%= post.created_at.strftime("%d %b") %>
+        </span>
+      </time>
+    </div>
+
+    <div class="hidden sm:block sm:basis-56 relative">
+        <div class=" w-full h-full absolute bg-gradient-to-tr from-gray-700 to-amber-300 opacity-30 z-10 hover:opacity-0 transition">
+        </div>
+         <img
+         alt="Blog post"
+         src="https://images.unsplash.com/photo-1546074177-ffdda98d214f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+         class="aspect-square h-full w-full object-cover" 
+         />
+    </div>
+  
+    <div class="flex flex-1 flex-col justify-between">
+      <div class="border-l border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
+        <a href="#">
+          <h3 class="font-bold uppercase text-gray-900">
+            <%= post.title %>
+          </h3>
+        </a>
+  
+        <p class="mt-2 text-sm leading-relaxed text-gray-700 line-clamp-3">
+            <%= post.text.truncate(200) %>
+        </p>
+      </div>
+  
+      <div class="sm:flex sm:items-end gap-5 sm:justify-end">
+        <span class="text-sm p-1">
+            <span>
+              Comments:
+            </span>
+            <span>
+                <%= post.comments_counter %>
+            </span>
+        </span>
+        <span class="text-sm p-1">
+            <span>
+              Likes:
+            </span>
+            <span>
+                <%= post.likes_counter %>
+            </span>
+        </span>
+        <a
+          href="#"
+          class="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
+        >
+          Read Blog
+        </a>
+      </div>
+    </div>
+  </article>
+  

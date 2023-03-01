@@ -1,0 +1,27 @@
+<article
+  class="rounded-xl border-2 border-gray-100 bg-white my-3"
+  onclick="location.href='<%= user_path(user) %>'"
+  style="cursor: pointer"
+>
+  <div class="flex h-32 items-start gap-4 p-2">
+    <a href="#" class="block shrink-0">
+      <img
+        class="h-28 w-28 rounded-lg object-cover"
+        alt="<%= user.name %>"
+        src="<%= user.photo %>"
+      />
+    </a>
+
+    <div class="flex flex-col flex-1 justify-between h-28">
+      <h3 class="font-medium sm:text-lg"><%= user.name %></h3>
+
+      <div class="mt-2 sm:flex sm:items-center sm:gap-2 justify-end">
+        <div class="flex items-center gap-1 text-gray-500">
+          <i class="fas fa-pencil-alt"></i>
+          <p class="text-xs"><%= user.posts_counter %> posts</p>
+        </div>
+        <span class="hidden sm:block" aria-hidden="true">&middot;</span>
+      </div>
+    </div>
+  </div>
+</article>
