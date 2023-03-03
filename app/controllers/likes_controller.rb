@@ -4,7 +4,7 @@ class LikesController < ApplicationController
     @like.user_id = current_user.id
     @like.post_id = params[:post_id]
     if @like.save
-      redirect_to user_post_path(params[:user_id], params[:post_id])
+      redirect_to user_post_path(current_user.id, params[:post_id])
     else
       flash[:error] = "Like could not be saved."
       render :new
@@ -14,7 +14,7 @@ class LikesController < ApplicationController
   def destroy
     @like = Like.find(params[:id])
     @like.destroy
-    redirect_to user_post_path(params[:user_id], params[:post_id])
+    redirect_to user_post_path(current_user.id, params[:post_id])
   end
 
   private
