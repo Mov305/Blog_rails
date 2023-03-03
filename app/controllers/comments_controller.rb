@@ -8,9 +8,8 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.post_id = params[:post_id]
     if @comment.save
-      redirect_to user_post_path(params[:user_id], params[:post_id])
+      redirect_to user_post_path(current_user.id, params[:post_id])
     else
-      flash[:error] = "Comment could not be saved."
       render :new
     end
   end
@@ -18,6 +17,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:text)
   end
 end
