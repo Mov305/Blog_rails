@@ -21,8 +21,10 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: blog_rails
-  user: blogadmin
-  password: blogAdmin
+  #user: blogadmin
+  #password: blogAdmin
+  user: postgres
+  password: momo123456
 
 development:
   <<: *default
