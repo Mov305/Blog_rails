@@ -15,37 +15,37 @@ RSpec.describe 'user/show.html.erb', type: :system do
   end
 
   it 'displays the user name' do
-    visit 'http://localhost:3000'
+    visit users_path # 'http://localhost:3000'
     click_link(@user1.name)
     expect(page).to have_content(@user1.name)
   end
 
   it 'displays the user photo' do
-    visit 'http://localhost:3000'
+    visit users_path
     click_link(@user1.name)
     expect(page.body).to include(@user1.photo)
   end
 
   it 'displays the user bio' do
-    visit 'http://localhost:3000'
+    visit users_path
     click_link(@user1.name)
     expect(page).to have_content(@user1.bio)
   end
 
   it 'displays the number of posts' do
-    visit 'http://localhost:3000'
+    visit users_path
     click_link(@user1.name)
     expect(page).to have_content(@user1.posts.count)
   end
 
   it 'displays the user posts' do
-    visit 'http://localhost:3000'
+    visit users_path
     click_link(@user1.name)
     expect(page).to have_content(@post1.title)
   end
 
   it 'redirects to the user posts page' do
-    visit 'http://localhost:3000'
+    visit users_path
     click_link(@user1.name)
     click_link('See all posts')
     expect(page).to have_current_path(user_posts_path(@user1.id))
