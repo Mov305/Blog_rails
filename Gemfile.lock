@@ -257,9 +257,8 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
   rails-controller-testing
-  rspec-rails
+  rspec-rails (~> 6.0.1)
   sassc-rails
-  selenium-webdriver
   sprockets-rails
   stimulus-rails
   tailwindcss-rails (~> 2.0)
@@ -269,7 +268,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.1.3p185
 
 BUNDLED WITH
    2.4.7
