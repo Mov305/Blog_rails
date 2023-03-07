@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe 'User post show page Capybara integration test', type: :system do
   before :all do
-    Like.destroy_all 
+    Like.destroy_all
     Comment.destroy_all
     Post.destroy_all
     User.destroy_all

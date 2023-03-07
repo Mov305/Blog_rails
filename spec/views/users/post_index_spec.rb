@@ -1,10 +1,10 @@
 require 'rails_helper'
 RSpec.describe 'User post index page Capybara integration test', type: :system do
   before :all do
-    Like.destroy_all 
-    Comment.destroy_all 
-    Post.destroy_all 
-    User.destroy_all 
+    Like.destroy_all
+    Comment.destroy_all
+    Post.destroy_all
+    User.destroy_all
     first_user = User.create(name: 'Tom', photo: 'https://i.ibb.co/CP4m1b4/img.jpg', bio: 'Teacher from Mexico.')
     second_user = User.create(name: 'Lilly', photo: 'https://i.ibb.co/CP4m1b4/img.jpg',
                               bio: 'Teacher from Poland.')
