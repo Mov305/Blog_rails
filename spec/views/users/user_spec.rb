@@ -2,10 +2,10 @@ require "rails_helper"
 
 RSpec.describe "user/index.html.erb", type: :system do
   before :all do
-    Like.destroy_all if Like.count > 0
-    Comment.destroy_all if Comment.count > 0
-    Post.destroy_all if Post.count > 0
-    User.destroy_all if User.count > 0
+    Like.destroy_all 
+    Comment.destroy_all
+    Post.destroy_all 
+    User.destroy_all
     @user1 = User.create(name: "Tom", photo: "https://unsplash.com/photos/F_-0BxGuVvo", bio: "Teacher from Mexico.")
   end
 
