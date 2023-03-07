@@ -1,13 +1,13 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.where(user_id: params[:user_id]).order(created_at: :desc)
+    @posts = current_user.return_recent_posts.includes(:user, :comments)
     @user = User.find(params[:user_id])
     @current = current_user
   end
 
   def show
     @post = Post.find(params[:id])
-    @comments = Comment.where(post_id: params[:id]).order(created_at: :desc)
+    @comments = @post.comments.includes(:user)
     @user = current_user
     @current = current_user
   end
