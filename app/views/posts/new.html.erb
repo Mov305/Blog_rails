@@ -1,0 +1,32 @@
+<section class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 p-4 md:w-1/2">
+  <div class="mx-auto max-w-lg text-center">
+    <h1 class="text-2xl font-bold sm:text-3xl">New Post</h1>
+  </div>
+
+  <%= form_with model: @post, url: user_posts_path, class:"mx-auto mt-8 mb-0 max-w-md space-y-4" do
+  |f| %>
+  <div>
+    <%= f.label :title, class:"sr-only" %>
+
+    <div class="relative">
+      <%= f.text_field :title, class:"w-full rounded-lg border-gray-200 p-4 pr-12 text-sm
+      shadow-sm", placeholder:"Enter the title" %>
+
+    </div>
+  </div>
+
+  <div>
+    <%= f.label :text, class:"sr-only" %>
+
+    <div class="relative">
+      <%= f.text_area :text, class:"w-full rounded-lg border-gray-200 p-3 text-sm",
+      placeholder:"Enter the text", rows:"8" %>
+    </div>
+  </div>
+
+  <div class="flex items-center justify-center ">
+    <%= f.submit "Post", class:"inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium
+    text-white" %>
+  </div>
+  <% end %>
+</section>

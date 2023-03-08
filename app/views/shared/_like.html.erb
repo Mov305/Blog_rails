@@ -1,0 +1,6 @@
+<!-- Add a like -->
+<%= form_with model: Like, url: user_post_likes_path(@user.id,@post.id), method: :post, class:'flex justify-end' do |f| %>
+<button type="submit" class="flex items-center gap-2 text-xl mt-5 mx-6 text-blue-500">
+ <i class="fas fa-thumbs-up"></i>
+</button>
+<% end %>
