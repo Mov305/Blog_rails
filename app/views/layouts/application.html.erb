@@ -10,9 +10,9 @@
 
   <body>
     <main>
-      <%= render "static/head" %>
+      <% if user_signed_in? %> <%= render "static/head" %> <% end %>
       <p class="text-slate-500 bg-yellow-200/50 p-4"><%= notice %></p>
-      <p class="text-slate-500 bg-red-200/50 p-4" ><%= alert %></p>
+      <p class="text-slate-500 bg-red-200/50 p-4"><%= alert %></p>
       <%= yield %>
     </main>
   </body>
