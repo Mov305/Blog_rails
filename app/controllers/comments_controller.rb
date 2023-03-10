@@ -19,6 +19,7 @@ class CommentsController < ApplicationController
     user_id = @comment.user_id
     post_id = @comment.post_id
     @comment.destroy
+    Post.find(post_id).decrement!(:comments_counter)
     redirect_to user_post_path(user_id, post_id)
   end
 
