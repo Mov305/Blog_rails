@@ -110,7 +110,7 @@ Feel free to check the [issues page](https://github.com/paulinagonzalezc/blog-ap
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project please give it a star 😁🌟✨
+If you like this project please give it a star 😁🌟
 
 [back to top](#readme-top)
 
