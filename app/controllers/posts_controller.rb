@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     @post.destroy
     User.find(user_id).decrement!(:posts_counter)
     redirect_to user_posts_path(user_id)
-  end 
+  end
 
   private
 
