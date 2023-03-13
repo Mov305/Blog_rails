@@ -2,18 +2,17 @@
 <html>
   <head>
     <title>Blog</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <%= csrf_meta_tags %> <%= csp_meta_tag %> <%= stylesheet_link_tag "tailwind", "inter-font",
+    "data-turbo-track": "reload" %> <%= stylesheet_link_tag "application", "data-turbo-track":
+    "reload" %> <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <main >
-      <%= render "static/head" %>
+    <main>
+      <% if user_signed_in? %> <%= render "static/head" %> <% end %>
+      <% if notice %> <p class="text-slate-500 bg-yellow-200/50 p-4"><%= notice %></p> <% end %>
+      <% if alert %> <p class="text-slate-500 bg-red-200/50 p-4"><%= alert %></p> <% end %>
       <%= yield %>
     </main>
   </body>
