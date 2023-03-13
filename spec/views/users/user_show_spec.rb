@@ -62,12 +62,11 @@ RSpec.describe 'user/show.html.erb', type: :system do
     click_link(@user1.name)
     expect(page).to have_link('See all posts')
   end
-  
+
   it 'redirects to the user posts page' do
     visit users_path
     click_link(@user1.name)
     click_link('See all posts')
     expect(page).to have_current_path(user_posts_path(@user1.id))
   end
-
 end
