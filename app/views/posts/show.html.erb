@@ -7,13 +7,36 @@
     </div>
   </div>
   <p class=" p-3 border-b border-gray-500/50"><%= @post.text %></p>
-  <%= render 'shared/like' %>
+  <div class="flex flex-col justify-end items-end gap-4" >
+    <div>
+      <%= render 'shared/like' %>
+    </div>
+    <div class="flex justify-end mx-6" >
+      <% if can? :destroy, @post %>
+      <%= button_to user_post_path(@current_user,@post.id), method: :delete, class:"text-sm text-red-500" do %>
+      Delete Post
+      <i class="fas fa-trash-alt"></i>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
   <div class="flex flex-col gap-2 p-5  rounded-br-3xl">
     <%= render 'shared/comment' %>
     <% @comments.each do |comment| %>
-    <div>
-      <span class="text-sm font-semibold text-gray-500"><%= comment.username %>:</span>
-      <span class="text-sm text-gray-500"><%= comment.text %></span>
+    <div class="flex justify-between items-center">
+      <div class="p-1">
+        <span class="text-sm font-semibold text-gray-500"><%= comment.username %>:</span>
+        <span class="text-sm text-gray-500"><%= comment.text %></span>
+      </div>
+      <% if can? :destroy, comment %>
+      <div class="flex justify-end">
+        <%= button_to user_post_comment_path( @current_user ,@post.id,comment.id), method: :delete,
+        class:"text-sm text-red-500" do %>
+        Delete
+        <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <% end %>
     </div>
     <% end %>
   </div>

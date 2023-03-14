@@ -1,4 +1,4 @@
-<article class="flex bg-white transition hover:shadow-xl border-[1px] border-gray-100 rounded-tl-3xl mt-6 cursor-pointer" onclick="location.href='<%= user_post_path(user,post) %>'" >
+<article class="flex bg-white transition hover:shadow-xl border-[1px] border-gray-100 rounded-tl-3xl mt-6 cursor-pointer" id="<%= post.id %>" onclick="location.href='<%= user_post_path(user,post) %>'" >
     <div class="flex items-center">
         <time
         datetime="<%= post.created_at.strftime("%Y-%m-%d") %> "
