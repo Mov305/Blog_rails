@@ -20,12 +20,13 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: microverse_blog_development
-  user: postgres
-  password: 123456
-  # database: blog_rails
-  # user: blogadmin
-  # password: blogAdmin
+
+  # database: microverse_blog_development
+  # username: postgres
+  # password: 123456
+  database: blog_rails
+  user: blogadmin
+  password: blogAdmin
   # user: postgres
   # password: momo123456
 

@@ -92,6 +92,12 @@ rails s
 - Twitter: [@Mov305](https://twitter.com/Mov_abd)
 - LinkedIn: [@Mov305](https://www.linkedin.com/in/abdelrhman-samy-80b14b215/)
 
+👤 **Mohamed Saleh**
+
+- GitHub: [@mohamed20163858](https://github.com/mohamed20163858)
+- Twitter: [@mohamed20163858](https://twitter.com/mohamed20163858)
+- LinkedIn: [MohamedMohsenSaleh](https://www.linkedin.com/in/mohamedmohsensaleh/
+
 <p align="right">([back to top](#readme-top))</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
@@ -110,7 +116,7 @@ Feel free to check the [issues page](https://github.com/paulinagonzalezc/blog-ap
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project please give it a star 😁🌟✨
+If you like this project please give it a star 😁🌟
 
 [back to top](#readme-top)
 

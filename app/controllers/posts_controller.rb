@@ -3,6 +3,11 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments).order(created_at: :desc)
     @current = current_user
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts.to_json(include: :comments) }
+    end
   end
 
   def show
@@ -10,6 +15,11 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user).order(created_at: :desc)
     @user = current_user
     @current = current_user
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @post.to_json(include: :comments) }
+    end
   end
 
   def new
@@ -25,6 +35,14 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    user_id = @post.user_id
+    @post.destroy
+    User.find(user_id).decrement!(:posts_counter)
+    redirect_to user_posts_path(user_id)
   end
 
   private

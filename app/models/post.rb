@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :likes, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :delete_all
+  has_many :comments, dependent: :delete_all
 
   validates :title, presence: true, length: { maximum: 250 }
   validates :comments_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
@@ -11,6 +11,10 @@ class Post < ApplicationRecord
 
   def return_recent_comments
     comments.order('created_at DESC').limit(5)
+  end
+
+  def as_json(options = {})
+    super({ only: %i[id title body created_at updated_at comments_counter likes_counter] }.merge(options))
   end
 
   private
