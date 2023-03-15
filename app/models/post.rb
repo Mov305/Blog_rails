@@ -14,7 +14,7 @@ class Post < ApplicationRecord
   end
 
   def as_json(options = {})
-    super({:only => [:id, :title, :body, :created_at, :updated_at, :comments_counter, :likes_counter]}.merge(options))
+    super({ only: %i[id title body created_at updated_at comments_counter likes_counter] }.merge(options))
   end
 
   private

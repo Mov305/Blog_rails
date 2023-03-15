@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render json: @posts.to_json(:include => :comments) }
+      format.json { render json: @posts.to_json(include: :comments) }
     end
   end
 
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render json: @post.to_json(:include => :comments) }
+      format.json { render json: @post.to_json(include: :comments) }
     end
   end
 

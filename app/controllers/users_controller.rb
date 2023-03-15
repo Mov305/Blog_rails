@@ -5,9 +5,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render json: @users.to_json(:include => :posts) }
+      format.json { render json: @users.to_json(include: :posts) }
     end
-
   end
 
   def show
@@ -15,9 +14,9 @@ class UsersController < ApplicationController
     @latest = @user.return_recent_posts
     @current = current_user
 
-    respond_to do |format| 
+    respond_to do |format|
       format.html
-      format.json { render json: @user.to_json(:include => :posts) }
+      format.json { render json: @user.to_json(include: :posts) }
     end
   end
 end
