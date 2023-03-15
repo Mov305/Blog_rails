@@ -1,16 +1,8 @@
 class Api::V1::CommentsController < ApplicationController
-  before_action :set_post, only: %i[index create]
-  before_action :set_comment, only: %i[show update destroy]
+  before_action :set_post, only: %i[create]
+  before_action :set_comment, only: %i[update destroy]
   skip_before_action :verify_authenticity_token
 
-  def index
-    @comments = Comment.new
-    render json: @comments
-  end
-
-  def show
-    render json: @comment
-  end
 
   def create
     @comment = Comment.new(comment_params)
