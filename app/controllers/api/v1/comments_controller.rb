@@ -3,7 +3,6 @@ class Api::V1::CommentsController < ApplicationController
   before_action :set_comment, only: %i[update destroy]
   skip_before_action :verify_authenticity_token
 
-
   def create
     @comment = Comment.new(comment_params)
     @comment.user = current_user
