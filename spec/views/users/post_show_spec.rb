@@ -24,37 +24,30 @@ RSpec.describe 'User post show page Capybara integration test', type: :system do
   end
   it 'test seeing the post title' do
     visit "/users/#{@first_user.id}/posts/#{@first_post.id}"
-    sleep(1)
     expect(page).to have_content(@first_post.title.to_s)
   end
   it 'test seeing the name of the post writer ' do
     visit "/users/#{@first_user.id}/posts/#{@first_post.id}"
-    sleep(1)
     expect(page).to have_content(@first_post.user.name.to_s)
   end
   it 'test seeing the number of comments it has' do
     visit "/users/#{@first_user.id}/posts/#{@first_post.id}"
-    sleep(1)
     expect(page).to have_content("#{@first_post.comments_counter} comments")
   end
   it 'test seeing the number of likes it has' do
     visit "/users/#{@first_user.id}/posts/#{@first_post.id}"
-    sleep(1)
     expect(page).to have_content("#{@first_post.likes_counter} likes")
   end
   it 'test seeing the post body' do
     visit "/users/#{@first_user.id}/posts/#{@first_post.id}"
-    sleep(1)
     expect(page).to have_content(@first_post.text.to_s)
   end
   it 'test seeing the username of a random commentor' do
     visit "/users/#{@first_user.id}/posts/#{@first_post.id}"
-    sleep(1)
     expect(page).to have_content(@first_post.comments.first.user.name.to_s)
   end
   it 'test seeing the comment of a random commentor' do
     visit "/users/#{@first_user.id}/posts/#{@first_post.id}"
-    sleep(1)
     expect(page).to have_content(@first_post.comments.first.text.to_s)
   end
 end
